@@ -841,13 +841,13 @@ std::unique_ptr<Filter> MakeFilter(const std::string &name,
     if (name == "box")
         filter = CreateBoxFilter(paramSet);
     else if (name == "gaussian")
-        filter = CreateGaussianFilter(paramSet);
+        filter = CreateBoxFilter(paramSet);
     else if (name == "mitchell")
-        filter = CreateMitchellFilter(paramSet);
+        filter = CreateBoxFilter(paramSet);
     else if (name == "sinc")
-        filter = CreateSincFilter(paramSet);
+        filter = CreateBoxFilter(paramSet);
     else if (name == "triangle")
-        filter = CreateTriangleFilter(paramSet);
+        filter = CreateBoxFilter(paramSet);
     else {
         Error("Filter \"%s\" unknown.", name.c_str());
         exit(1);
