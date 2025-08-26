@@ -87,7 +87,7 @@ class ImageTexture : public Texture<Treturn> {
     Treturn Evaluate(const SurfaceInteraction &si) const {
         Vector2f dstdx, dstdy;
         Point2f st = mapping->Map(si, &dstdx, &dstdy);
-        Tmemory mem = mipmap->Lookup(st, dstdx, dstdy);
+        Tmemory mem = mipmap->Lookup(st, 0.0f);
         Treturn ret;
         convertOut(mem, &ret);
         return ret;
