@@ -55,13 +55,13 @@ std::unique_ptr<LightDistribution> CreateLightSampleDistribution(
             new PowerLightDistribution(scene)};
     else if (name == "spatial")
         return std::unique_ptr<LightDistribution>{
-            new SpatialLightDistribution(scene)};
+            new PowerLightDistribution(scene)};
     else {
         Error(
-            "Light sample distribution type \"%s\" unknown. Using \"spatial\".",
+            "Light sample distribution type \"%s\" unknown. Using \"power\".",
             name.c_str());
         return std::unique_ptr<LightDistribution>{
-            new SpatialLightDistribution(scene)};
+            new PowerLightDistribution(scene)};
     }
 }
 
